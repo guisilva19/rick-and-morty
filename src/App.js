@@ -1,8 +1,8 @@
+import Header from "./Components/Header/Header";
+import "./global.scss";
 
 function App() {
-  return (
-    <></>
-  );
+  return <Header />;
 }
 
 export default App;
