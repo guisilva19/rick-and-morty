@@ -1,0 +1,104 @@
+@use "../../Global/variables";
+
+.header {
+  width: 100vw;
+  height: 7rem;
+  background-color: rgb(242, 242, 242);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  // box-shadow: 4px 4px 8px -3px rgba(0, 0, 0, 0.75);
+
+  h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+    color: variables.$primary-color;
+
+    animation: bounce-in-top 2s both;
+    z-index: 1;
+  }
+
+  img {
+    width: 350px;
+    transform: rotateX(100deg) translateY(5rem);
+    margin: -10rem 0;
+
+    animation: slime 0s forwards;
+    animation-delay: 1.2s;
+    opacity: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 7.7rem;
+    top: -1rem;
+    background: linear-gradient(
+      90deg,
+      rgba(30, 99, 0, 0.8995973389355743) 17%,
+      rgba(76, 207, 62, 1) 49%,
+      rgba(13, 255, 8, 1) 77%,
+      rgba(185, 255, 0, 1) 100%
+    );
+    z-index: -1;
+    animation: neon 1s ease-in infinite alternate;
+  }
+}
+
+@keyframes neon {
+  from {
+    filter: blur(10px);
+  }
+  to {
+    filter: blur(10px);
+    width: 0;
+  }
+}
+
+@keyframes slime {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in-top {
+  0% {
+    transform: translateY(-500px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateY(-65px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateY(-28px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateY(-8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+}
