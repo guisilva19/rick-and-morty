@@ -1,8 +1,19 @@
-.main{
+.main {
   width: 100vw;
   height: max-content;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 5rem 0;
+  gap: 3rem;
+
+  div {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      cursor: pointer;
+    }
+  }
 }

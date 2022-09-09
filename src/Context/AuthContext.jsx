@@ -5,15 +5,31 @@ export const Context = createContext({});
 
 const AuthContext = ({ children }) => {
   const [persons, setPersons] = useState([]);
-
+  const [pageCount, setPageCount] = useState(1);
 
   useEffect(() => {
-    Api.get("/character")
-    .then((res) => setPersons(res.data.results))
-    .catch((error) => console.log('Deu b.o'))
-    
-  }, []);
+    Api.get("/character/?page=" + pageCount).then((res) =>
+      setPersons(res.data.results)
+    );
+    console.log(pageCount);
+  }, [pageCount]);
 
-  return <Context.Provider value={{persons}}>{children}</Context.Provider>;
+  const nextPage = () => {
+    if (pageCount < 42) {
+      setPageCount(pageCount + 1);
+    }
+  };
+
+  const previousPage = () => {
+    if (pageCount > 1) {
+      setPageCount(pageCount - 1);
+    }
+  };
+
+  return (
+    <Context.Provider value={{ persons, nextPage, previousPage, pageCount }}>
+      {children}
+    </Context.Provider>
+  );
 };
 export default AuthContext;
