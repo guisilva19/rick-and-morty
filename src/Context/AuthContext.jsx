@@ -4,19 +4,16 @@ import Api from "../Services/Api";
 export const Context = createContext({});
 
 const AuthContext = ({ children }) => {
+  const [persons, setPersons] = useState([]);
 
-
-  const listRequest = async () => {
-    const {
-      data: { results },
-    } = await Api.get("/character");
-    console.log(results);
-  };
 
   useEffect(() => {
-    listRequest();
+    Api.get("/character")
+    .then((res) => setPersons(res.data.results))
+    .catch((error) => console.log('Deu b.o'))
+    
   }, []);
 
-  return <Context.Provider value={{}}>{children}</Context.Provider>;
+  return <Context.Provider value={{persons}}>{children}</Context.Provider>;
 };
 export default AuthContext;
