@@ -1,14 +1,8 @@
-import Cards from "./Components/Cards/Cards";
-import Header from "./Components/Header/Header";
 import "./Global/reset.scss";
+import Home from "./Pages/Home/Home";
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Cards/>
-    </>
-  );
+  return <Home />;
 }
 
 export default App;
