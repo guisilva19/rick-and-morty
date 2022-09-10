@@ -15,19 +15,24 @@ const AuthContext = ({ children }) => {
   }, [pageCount]);
 
   const nextPage = () => {
-    if (pageCount < 42) {
+    if (pageCount < 41) {
+      setPageCount(pageCount + 2);
+    }else if(pageCount === 41) {
       setPageCount(pageCount + 1);
     }
   };
 
   const previousPage = () => {
-    if (pageCount > 1) {
+    if (pageCount > 2) {
+      setPageCount(pageCount - 2);
+    }else if(pageCount === 2) {
       setPageCount(pageCount - 1);
     }
   };
 
+
   return (
-    <Context.Provider value={{ persons, nextPage, previousPage, pageCount }}>
+    <Context.Provider value={{ persons, nextPage, previousPage, pageCount, setPageCount}}>
       {children}
     </Context.Provider>
   );
