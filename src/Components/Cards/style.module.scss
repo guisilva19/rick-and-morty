@@ -1,20 +1,21 @@
+@use "../../Global/mixins";
+
+
 .lista {
+  @include mixins.box-flex;
   width: 80%;
   height: max-content;
-  display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  align-items: flex-start;
   gap: 3rem;
 }
 
 .card {
+  @include mixins.box-flex;
+
   width: 20rem;
   height: 22rem;
 
-  display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
 
   border-radius: 1.1rem;
@@ -28,8 +29,7 @@
   }
 
   div {
-    display: flex;
-    justify-content: center;
+    @include mixins.box-flex;
 
     width: inherit;
     height: 2.5rem;
