@@ -1,0 +1,23 @@
+@use '../../Global/mixins';
+@use '../../Global/variables';
+
+.section{
+  @include mixins.box-flex;
+
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  background-color: variables.$background-transparent;
+}
+
+.div{
+  width: 50%;
+  height: 50%;
+
+  background-color: white;
+}
