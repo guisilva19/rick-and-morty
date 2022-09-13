@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Context } from "../../Context/AuthContext";
 import styles from "./style.module.scss";
 const Cards = () => {
-  const { persons } = useContext(Context);
+  const { persons, setIsModalPerson } = useContext(Context);
 
   return (
     <>
@@ -33,7 +33,12 @@ const Cards = () => {
 
               <div>
                 <p className="gender">Gênero: {person.gender}</p>
-                <span className="maisInfo">Saiba mais</span>
+                <span
+                  onClick={() => setIsModalPerson(true)}
+                  className={styles["saiba-mais"]}
+                >
+                  Saiba mais
+                </span>
               </div>
             </div>
           </li>

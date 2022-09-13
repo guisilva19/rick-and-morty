@@ -4,9 +4,10 @@ import styles from "./style.module.scss";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { useContext } from "react";
 import { Context } from "../../Context/AuthContext";
+import ModalPerson from "../../Components/ModalPerson/ModalPerson";
 
 const Home = () => {
-  const { nextPage, previousPage, pageCount, setPageCount } =
+  const { nextPage, previousPage, pageCount, setPageCount, isModalPerson } =
     useContext(Context);
 
   const stylePrevious = {
@@ -41,7 +42,7 @@ const Home = () => {
             style={stylePrevious}
             className={styles.buttonPage}
           >
-            <GrFormPrevious />
+            <GrFormPrevious className={styles.icon} />
           </button>
 
           {pageCount - 2 !== -1 && (
@@ -71,12 +72,14 @@ const Home = () => {
             className={styles.buttonPage}
             style={styleNext}
           >
-            <GrFormNext />
+            <GrFormNext className={styles.icon} />
           </button>
         </div>
 
         <Cards />
       </main>
+
+      {isModalPerson && <ModalPerson />}
     </>
   );
 };

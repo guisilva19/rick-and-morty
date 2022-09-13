@@ -11,7 +11,7 @@
   padding: 5rem 0;
   gap: 3rem;
 
-  div { 
+  div {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -38,5 +38,11 @@
       font-size: 50px;
       transition: 0.3s;
     }
+  }
+}
+
+.icon {
+  polyline {
+    stroke: white;
   }
 }
