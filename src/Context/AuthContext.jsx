@@ -11,7 +11,6 @@ const AuthContext = ({ children }) => {
     Api.get("/character/?page=" + pageCount).then((res) =>
       setPersons(res.data.results)
     );
-    console.log(pageCount);
   }, [pageCount]);
 
   const nextPage = () => {

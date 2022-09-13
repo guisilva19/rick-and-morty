@@ -21,6 +21,7 @@ const Cards = () => {
           >
             <img src={person.image} alt={person.name} />
             <div
+              className={styles.div}
               style={{
                 background:
                   person.gender === "Male"
@@ -29,6 +30,11 @@ const Cards = () => {
               }}
             >
               <h2>{person.name}</h2>
+
+              <div>
+                <p className="gender">Gênero: {person.gender}</p>
+                <span className="maisInfo">Saiba mais</span>
+              </div>
             </div>
           </li>
         ))}

@@ -1,14 +1,17 @@
 @use "../../Global/mixins";
+@use "../../Global/variables";
 
 .main {
   @include mixins.box-flex;
+  background-image: variables.$image;
+  background-repeat: no-repeat;
   width: 100vw;
-  height: max-content;
+  height: 95vh;
   flex-direction: column;
   padding: 5rem 0;
   gap: 3rem;
 
-  div {
+  div { 
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -21,13 +24,16 @@
       border: unset;
       font-size: 30px;
       padding-top: 5px;
+      color: white;
       cursor: pointer;
     }
+
     .buttonSelect {
-      background-color: black;
+      background-color: variables.$primary-color;
       color: white;
       border-radius: 50%;
     }
+
     button:hover {
       font-size: 50px;
       transition: 0.3s;
