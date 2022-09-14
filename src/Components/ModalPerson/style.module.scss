@@ -1,7 +1,7 @@
-@use '../../Global/mixins';
-@use '../../Global/variables';
- 
-.section{
+@use "../../Global/mixins";
+@use "../../Global/variables";
+
+.section {
   @include mixins.box-flex;
 
   width: 100vw;
@@ -15,7 +15,7 @@
   background-color: variables.$background-transparent;
 }
 
-.div{
+.div {
   width: 50%;
   height: 50%;
 
@@ -24,18 +24,15 @@
   background-size: 100% 100%;
   border-radius: 1rem;
 
-
   @include mixins.box-flex;
   justify-content: flex-start;
   flex-direction: column;
   position: relative;
   gap: 2rem;
 
-
   color: white;
 
-
-  button{
+  button {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -48,13 +45,12 @@
     color: white;
   }
 
-  h2{
+  h2 {
     font-size: 40px;
     margin-top: 3rem;
-    
   }
 
-  div{
+  div {
     width: 80%;
 
     display: flex;
@@ -64,4 +60,92 @@
   }
 }
 
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
 
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.specie {
+  width: 0;
+  border-right: 4px solid rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+  white-space: nowrap;
+
+  animation: blinkCursor 0.5s infinite normal,
+    specie-animattion 1s 1s normal steps(30) forwards;
+}
+
+@keyframes specie-animattion {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 30%;
+  }
+}
+
+.status {
+  width: 0;
+  border-right: 4px solid rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+  white-space: nowrap;
+
+  animation: blinkCursor 0.5s infinite normal,
+    status-animattion 1s 2s normal steps(30) forwards;
+}
+
+@keyframes status-animattion {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 20%;
+  }
+}
+
+.gender {
+  width: 0;
+  border-right: 4px solid rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+  white-space: nowrap;
+
+  animation: blinkCursor 0.5s infinite normal,
+    gender-animattion 1s 3s normal steps(30) forwards;
+}
+
+@keyframes gender-animattion {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 25%;
+  }
+}
+
+.origin {
+  width: 0;
+  border-right: 4px solid rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+  white-space: nowrap;
+
+  animation: blinkCursor 0.5s infinite normal,
+    origin-animattion 2s 4s normal steps(30) forwards;
+}
+
+@keyframes origin-animattion {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 45%;
+  }
+}

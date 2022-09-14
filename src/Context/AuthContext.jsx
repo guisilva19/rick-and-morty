@@ -6,7 +6,7 @@ export const Context = createContext({});
 const AuthContext = ({ children }) => {
   const [persons, setPersons] = useState([]);
   const [pageCount, setPageCount] = useState(1);
-  const [isModalPerson, setIsModalPerson] = useState(true);
+  const [isModalPerson, setIsModalPerson] = useState(false);
   const [person, setIsPerson] = useState({});
   const [origin, setOrigin] = useState("");
 
