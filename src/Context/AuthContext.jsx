@@ -6,8 +6,9 @@ export const Context = createContext({});
 const AuthContext = ({ children }) => {
   const [persons, setPersons] = useState([]);
   const [pageCount, setPageCount] = useState(1);
-  const [isModalPerson, setIsModalPerson] = useState(false);
-  console.log(isModalPerson)
+  const [isModalPerson, setIsModalPerson] = useState(true);
+  const [person, setIsPerson] = useState({});
+  const [origin, setOrigin] = useState("");
 
   useEffect(() => {
     Api.get("/character/?page=" + pageCount).then((res) =>
@@ -15,32 +16,25 @@ const AuthContext = ({ children }) => {
     );
   }, [pageCount]);
 
-  const nextPage = () => {
-    if (pageCount < 41) {
-      setPageCount(pageCount + 2);
-    } else if (pageCount === 41) {
-      setPageCount(pageCount + 1);
-    }
-  };
-
-  const previousPage = () => {
-    if (pageCount > 2) {
-      setPageCount(pageCount - 2);
-    } else if (pageCount === 2) {
-      setPageCount(pageCount - 1);
-    }
+  const handlePerson = async (id) => {
+    const {
+      data: { name, gender, status, origin, species },
+    } = await Api.get(`/character/${id}`);
+    setIsPerson({ name, gender, status, species });
+    setOrigin(origin.name)
   };
 
   return (
     <Context.Provider
       value={{
         persons,
-        nextPage,
-        previousPage,
         pageCount,
         setPageCount,
         setIsModalPerson,
         isModalPerson,
+        handlePerson,
+        person,
+        origin,
       }}
     >
       {children}

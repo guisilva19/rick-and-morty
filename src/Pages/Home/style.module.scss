@@ -3,7 +3,7 @@
 
 .main {
   @include mixins.box-flex;
-  background-image: variables.$image;
+  background-image: variables.$imagePage;
   background-repeat: no-repeat;
   width: 100vw;
   height: 95vh;

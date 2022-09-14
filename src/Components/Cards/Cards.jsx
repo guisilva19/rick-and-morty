@@ -2,7 +2,12 @@ import { useContext } from "react";
 import { Context } from "../../Context/AuthContext";
 import styles from "./style.module.scss";
 const Cards = () => {
-  const { persons, setIsModalPerson } = useContext(Context);
+  const { persons, setIsModalPerson, handlePerson } = useContext(Context);
+
+  const openModal = (id) => {
+    setIsModalPerson(true);
+    handlePerson(id);
+  };
 
   return (
     <>
@@ -34,8 +39,9 @@ const Cards = () => {
               <div>
                 <p className="gender">Gênero: {person.gender}</p>
                 <span
-                  onClick={() => setIsModalPerson(true)}
+                  onClick={(e) => openModal(e.target.id)}
                   className={styles["saiba-mais"]}
+                  id={person.id}
                 >
                   Saiba mais
                 </span>

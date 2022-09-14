@@ -7,8 +7,7 @@ import { Context } from "../../Context/AuthContext";
 import ModalPerson from "../../Components/ModalPerson/ModalPerson";
 
 const Home = () => {
-  const { nextPage, previousPage, pageCount, setPageCount, isModalPerson } =
-    useContext(Context);
+  const { pageCount, setPageCount, isModalPerson } = useContext(Context);
 
   const stylePrevious = {
     cursor: pageCount === 1 && "not-allowed",
@@ -28,6 +27,22 @@ const Home = () => {
 
   const previousOnePage = () => {
     if (pageCount > 1) {
+      setPageCount(pageCount - 1);
+    }
+  };
+
+  const nextPage = () => {
+    if (pageCount < 41) {
+      setPageCount(pageCount + 2);
+    } else if (pageCount === 41) {
+      setPageCount(pageCount + 1);
+    }
+  };
+
+  const previousPage = () => {
+    if (pageCount > 2) {
+      setPageCount(pageCount - 2);
+    } else if (pageCount === 2) {
       setPageCount(pageCount - 1);
     }
   };
