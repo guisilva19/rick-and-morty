@@ -1,0 +1,57 @@
+.div {
+  img {
+    top: 0;
+    z-index: 1;
+    position: fixed;
+    width: 30rem;
+  }
+}
+
+.navePrimary {
+  transform: translate(-30rem, 15rem);
+  animation: fly 10s 1s infinite;
+}
+
+
+
+@keyframes fly {
+  0% {
+    transform: translate(-30rem, 15rem);
+  }
+
+  35% {
+    transform: translate(30rem, 5rem);
+  }
+
+  80%{
+    transform: translate(187rem, -5rem);
+
+  }
+
+  90%{
+    transform: translate(197rem, -5rem);
+
+  }
+
+  100% {
+    transform: translate(200rem, -5rem);
+  }
+}
+
+.naveSecond{
+  transform: scaleX(-1) translate(-120rem, 30rem);
+  animation: fly-second 10s 7s linear infinite;
+  transition: 5s;
+}
+
+@keyframes fly-second {
+  0%{
+    transform: scaleX(-1) translate(-120rem, 30rem);
+  }
+  90%{
+    transform: scaleX(-1) translate(300rem, -55rem);
+  }
+  100%{
+    transform: scaleX(-1) translate(350rem, -55rem);
+  }
+}

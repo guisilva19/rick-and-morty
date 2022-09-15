@@ -15,6 +15,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    z-index: 3;
 
     button {
       @include mixins.box-flex;

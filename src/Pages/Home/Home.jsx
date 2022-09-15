@@ -5,6 +5,7 @@ import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { useContext } from "react";
 import { Context } from "../../Context/AuthContext";
 import ModalPerson from "../../Components/ModalPerson/ModalPerson";
+import NaveRickAndMorty from "../../Components/Nave/Nave";
 
 const Home = () => {
   const { pageCount, setPageCount, isModalPerson } = useContext(Context);
@@ -95,6 +96,8 @@ const Home = () => {
       </main>
 
       {isModalPerson && <ModalPerson />}
+
+      <NaveRickAndMorty/>
     </>
   );
 };

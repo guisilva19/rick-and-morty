@@ -21,7 +21,7 @@
     color: variables.$primary-color;
 
     animation: bounce-in-top 2s both;
-    z-index: 1;
+    z-index: 3;
   }
 
   img {
@@ -32,6 +32,7 @@
     animation: slime 0s forwards;
     animation-delay: 0.8s;
     opacity: 0;
+    z-index: 3;
   }
 
   &::before {
