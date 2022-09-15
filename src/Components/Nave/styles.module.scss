@@ -41,7 +41,6 @@
 .naveSecond{
   transform: scaleX(-1) translate(-120rem, 30rem);
   animation: fly-second 10s 7s linear infinite;
-  transition: 5s;
 }
 
 @keyframes fly-second {
