@@ -35,6 +35,7 @@ const AuthContext = ({ children }) => {
         handlePerson,
         person,
         origin,
+        setIsPerson
       }}
     >
       {children}

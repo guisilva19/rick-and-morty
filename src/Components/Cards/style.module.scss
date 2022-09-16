@@ -3,10 +3,11 @@
 .lista {
   @include mixins.box-flex;
   width: 80%;
-  height: max-content;
+  height: 40rem;
   flex-wrap: wrap;
   gap: 3rem;
   overflow-y: scroll;
+  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -43,6 +44,7 @@
     border-radius: 1rem;
   }
 
+ 
   &:hover {
     div {
       animation: up-to-info 0.2s linear forwards alternate;

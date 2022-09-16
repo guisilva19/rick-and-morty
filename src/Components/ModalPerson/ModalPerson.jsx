@@ -4,12 +4,17 @@ import styles from "./style.module.scss";
 import { RiCloseCircleLine } from "react-icons/ri";
 
 const ModalPerson = () => {
-  const { person, origin, setIsModalPerson } = useContext(Context);
+  const { person, origin, setIsModalPerson, setIsPerson } = useContext(Context);
 
   return (
     <section className={styles.section}>
       <div className={styles.div}>
-        <button onClick={() => setIsModalPerson(false)}>
+        <button
+          onClick={() => {
+            setIsPerson({});
+            setIsModalPerson(false);
+          }}
+        >
           <RiCloseCircleLine />
         </button>
         <h2>{person.name} Rick</h2>

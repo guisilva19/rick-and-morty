@@ -6,10 +6,10 @@
   background-image: variables.$imagePage;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 95vh;
+  height: 100vh;
   flex-direction: column;
-  padding: 5rem 0;
   gap: 3rem;
+  padding-bottom: 2rem;
 
   div {
     display: flex;
