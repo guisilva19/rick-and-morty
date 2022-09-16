@@ -7,6 +7,7 @@
 
   background-image: variables.$imagePage;
   background-repeat: no-repeat;
+  
 
   display: flex;
   justify-content: center;
@@ -45,9 +46,9 @@
     background: linear-gradient(
       90deg,
       rgba(30, 99, 0, 0.8995973389355743) 17%,
-      rgba(76, 207, 62, 1) 49%,
+      rgb(25, 251, 0) 49%,
       rgba(13, 255, 8, 1) 77%,
-      rgba(185, 255, 0, 1) 100%
+      rgba(30, 99, 0, 0.8995973389355743) 100%
     );
     z-index: -1;
     animation: neon 1s ease-in infinite alternate;
@@ -56,10 +57,10 @@
 
 @keyframes neon {
   from {
-    filter: blur(10px);
+    filter: blur(10px) brightness(150%);
   }
   to {
-    filter: blur(10px);
+    filter: blur(10px) brightness(150%);
     width: 0;
   }
 }

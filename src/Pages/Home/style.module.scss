@@ -5,11 +5,13 @@
   @include mixins.box-flex;
   background-image: variables.$imagePage;
   background-repeat: no-repeat;
+  background-size: max-content;
   width: 100vw;
-  height: 100vh;
+  height: 90.5vh;
   flex-direction: column;
   gap: 3rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  margin-top: 0.2rem;
 
   div {
     display: flex;
